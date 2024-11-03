@@ -68,7 +68,7 @@ Response: 400 Bad Request
 
 #### Obtener Perfil
 ```http
-GET /users/myprofile
+GET /auth/myprofile
 Authorization: Bearer <token>
 
 Response: 200 OK
@@ -163,7 +163,7 @@ Response: 404 Not Found
 
 #### Obtener Detalle del Producto
 ```http
-GET /productos/{productoId}
+GET /products/{productId}
 
 Response: 200 OK
 {
