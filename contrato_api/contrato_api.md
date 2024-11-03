@@ -18,9 +18,8 @@ https://api.happyart.com/v1
 POST /auth/register
 Content-Type: application/json
 
-Request Body:
+Request:
 {
-    "rut": "string",
     "firtName": "string",
     "lastName": "string",
     "email": "string",
@@ -47,6 +46,7 @@ Response: 400 Bad Request
 POST /auth/login
 Content-Type: application/json
 
+Request:
 {
     "email": "string",
     "password": "string"
@@ -98,12 +98,12 @@ POST /products
 Authorization: Bearer <token>
 Content-Type: application/json
 
-Request Body:
+Request:
 {
     "name": "string",
     "description": "string",
     "category": "string",
-    "productType"": "string",
+    "productType": "string",
     "price": "number",
     "stock": "integer",
     "theme": "string",
@@ -141,7 +141,7 @@ Response: 200 OK
         "stock": "integer"
         "category": "string",
         "theme": "string",
-        "productType"": "string",
+        "productType": "string",
         "img": "string"
         
     }],
