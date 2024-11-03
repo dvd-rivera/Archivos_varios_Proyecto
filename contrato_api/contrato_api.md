@@ -125,6 +125,7 @@ Response: 400 Bad Request
 #### Obtener Productos (Galería)
 ```http
 GET /products
+
 Query Parameters:
 - page (integer)
 - limit (integer)
@@ -173,7 +174,7 @@ Response: 200 OK
     "stock": "integer"
     "category": "string",
     "theme": "string",
-    "productType"": "string",
+    "productType": "string",
     "img": "string"
 }
 
