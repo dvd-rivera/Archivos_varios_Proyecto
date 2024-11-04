@@ -1,11 +1,13 @@
 # Proyecto Happy Art - Tienda Online
 
 ## Base URL
+
 ```
 https://api.happyart.com/v1
 ```
 
 ## Autenticación
+
 - Algunos endpoints requieren autenticación mediante JWT Token
 - El token debe ser incluido en el header: `Authorization: Bearer <token>`
 
@@ -14,13 +16,14 @@ https://api.happyart.com/v1
 ### 1. Autenticación y Usuarios
 
 #### Registro de Usuario
+
 ```http
 POST /auth/register
 Content-Type: application/json
 
 Request:
 {
-    "firtName": "string",
+    "firstName": "string",
     "lastName": "string",
     "email": "string",
     "password": "string",
@@ -42,6 +45,7 @@ Response: 400 Bad Request
 ```
 
 #### Inicio de Sesión
+
 ```http
 POST /auth/login
 Content-Type: application/json
@@ -55,7 +59,8 @@ Request:
 Response: 200 OK
 {
     "token": "string",
-    "email": "string"
+    "email": "string",
+    "userType": "string"
 }
 
 Response: 400 Bad Request
@@ -67,6 +72,7 @@ Response: 400 Bad Request
 ### 2. Perfil de Usuario
 
 #### Obtener Perfil
+
 ```http
 GET /auth/myprofile
 Authorization: Bearer <token>
@@ -74,8 +80,7 @@ Authorization: Bearer <token>
 Response: 200 OK
 {
     "usuario": {
-        "rut": "string",
-        "name": "string",
+        "firstName": "string",
         "lastName": "string",
         "email": "string",
         "password": "string",
@@ -93,6 +98,7 @@ Response: 400 Bad Request
 ### 3. Productos
 
 #### Crear Producto
+
 ```http
 POST /products
 Authorization: Bearer <token>
@@ -123,6 +129,7 @@ Response: 400 Bad Request
 ```
 
 #### Obtener Productos (Galería)
+
 ```http
 GET /products
 
@@ -144,7 +151,7 @@ Response: 200 OK
         "theme": "string",
         "productType": "string",
         "img": "string"
-        
+
     }],
     "total": "integer",
     "current_page": "integer",
@@ -156,13 +163,14 @@ Response: 400 Bad Request
     "message": "Error obteniendo los productos"
 }
 
-Response: 404 Not Found 
+Response: 404 Not Found
 {
     "message": "Productos no encontrado"
 }
 ```
 
 #### Obtener Detalle del Producto
+
 ```http
 GET /products/{productId}
 
@@ -183,7 +191,7 @@ Response: 400 Bad Request
     "message": "Error obteniendo el detalle del producto"
 }
 
-Response: 404 Not Found 
+Response: 404 Not Found
 {
     "message": "Producto no encontrado"
 }
